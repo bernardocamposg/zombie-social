@@ -1,0 +1,37 @@
+<% include _header %>
+<h1> Mostrar Armas</h1>
+
+<% weapons.forEach((equipment)=>{ %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a>
+        <label  class="col-form-label font-weight-bold">Arma</label>
+            
+        </a>
+    </div>
+    <div class="row">
+        <label  class="col-md-1 col-form-label font-italic">Arma:</label>
+        <label  class="col-form-label font-weight-light"><%= equipment.description %></label>
+    </div>
+    <div class="row">
+        <label  class="col-md-1 col-form-label font-italic">Fuerza:</label>
+        <label  class="col-form-label font-weight-light"><%= equipment.power %></label>
+    </div>
+    <div class="row">
+        <label  class="col-md-1 col-form-label font-italic">Categoria:</label>
+        <label  class="col-form-label font-weight-light"><%= equipment.category %></label>
+    </div>
+    <div class="row">
+        <label  class="col-md-1 col-form-label font-italic">Municion:</label>
+        <% if ( equipment.ammo === true){%>
+        <label  class="col-form-label font-weight-light">Tiene municion</label>
+        <%}else{%>
+        <label  class="col-form-label font-weight-light">No tiene municion</label>
+        <% } %>
+    </div>
+</div>
+    <a >----------------------------------------------</a>
+
+<% }) %>
+
+    <% include _footer %>
